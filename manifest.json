@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+
+    "name": "Visual Studio Online Task Board Extension",
+    "description": "Auto-refresh the task board when it changes. Change sidebar colors.",
+    "version": "1.4",
+
+    "page_action": {
+          "default_icon": {
+            "19": "icon19.png",
+            "38": "icon38.png"
+          },
+          "default_title": "Visual Studio Online Task Board Extension",
+          "default_popup": "popup.html"
+    },
+        
+    "background": {
+        "scripts":["eventPage.js"],
+        "persistent":false
+    },
+    
+    "content_scripts": [
+        {
+            "matches": [ "https://*.visualstudio.com/*/TaskBoard*", "https://*.visualstudio.com/*/taskboard*" ],
+            "js": [ "jquery-1.11.1.js", "refresh.js" ],
+            "css": [ "refresh.css" ]
+        }
+    ],
+
+    "permissions": [
+        "storage",
+        "https://*.visualstudio.com/*"
+    ]
+}

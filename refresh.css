@@ -1,0 +1,9 @@
+.tbTile.testTask {
+    border-left-color: Blue !important;
+}
+.tbTile.bugTask {
+    border-left-color: Pink !important;
+}
+.tbTile.storyTask {
+    border-left-color: DarkGreen !important;
+}
