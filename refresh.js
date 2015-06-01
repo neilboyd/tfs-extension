@@ -4,14 +4,14 @@ $(function () {
     chrome.runtime.sendMessage({action:'show'});
     
     // add a class to all tasks with a title beginning with RT: (regression test)
-    $(".tbTile:has(.witTitle)").each(function() {
+    $(".tbTile:has(.witExtra)").each(function() {
         if ($(this).text().indexOf('RT:') === 0) {
             $(this).addClass("testTask");
         }
     });
 
     // add a class to all tasks with a title beginning with BUG: or DEFECT:
-    $(".tbTile:has(.witTitle)").each(function() {
+    $(".tbTile:has(.witExtra)").each(function() {
         if ($(this).text().toLowerCase().indexOf('bug:') === 0) {
             $(this).addClass("bugTask");
         }
@@ -21,7 +21,7 @@ $(function () {
     });
 
     // add a class to all tasks with a title beginning with "Story points"
-    $(".tbTile:has(.witTitle)").each(function() {
+    $(".tbTile:has(.witExtra)").each(function() {
         if ($(this).text().toLowerCase().indexOf('story points') === 0) {
             $(this).addClass("storyTask");
         }

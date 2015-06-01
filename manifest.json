@@ -3,7 +3,7 @@
 
     "name": "Visual Studio Online Task Board Extension",
     "description": "Auto-refresh the task board when it changes. Change sidebar colors.",
-    "version": "1.4",
+    "version": "1.5",
 
     "page_action": {
           "default_icon": {
