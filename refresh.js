@@ -29,7 +29,8 @@ $(function () {
 
     // auto refresh when board changes (eg dragging a task)
     var timeout;
-    $("#taskboard").bind("DOMSubtreeModified", function() {
+    var modified = function() {
+        // console.log("modified");
         clearTimeout(timeout);
         timeout = setTimeout(function() {
             if ($(".witSaving").length) {
@@ -43,5 +44,6 @@ $(function () {
                 });
             }
         }, 1000);
-    });
+    };
+    $("#taskboard").bind("DOMNodeInserted", modified);
 });
